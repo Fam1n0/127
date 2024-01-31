@@ -1,38 +1,46 @@
-body {
+body, html {
     margin: 0;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
     background-color: #000000;
     color: #FFFFFF;
 }
+
+#canvasContainer {
+    max-width: 800px; /* Adjust based on your canvas size */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
 #drawingCanvas, #previewCanvas {
     border: 1px solid #000;
     background-color: #fff;
     margin-bottom: 10px;
 }
+
 #tools {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
 }
+
 .tool {
     margin-top: 10px;
     margin-right: 10px;
 }
+
 label {
     margin-right: 10px;
-}
-#canvasContainer {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-}
-canvas {
-    max-width: 100%;
-    height: auto;
 }

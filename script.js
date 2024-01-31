@@ -156,7 +156,7 @@ function drawDot(x, y) {
 function drawPreviewDot() {
     const previewCanvas = document.getElementById('previewCanvas');
     const previewCtx = previewCanvas.getContext('2d');
-    const size = parseInt(dotSize);
+    const size = parseInt(dotSize); // Ensure dotSize is an integer
     const centerX = previewCanvas.width / 2;
     const centerY = previewCanvas.height / 2;
 
@@ -169,6 +169,7 @@ function drawPreviewDot() {
 // Initialize preview
 drawPreviewDot();
 
+// Mouse Events
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     drawDot(e.offsetX, e.offsetY);
@@ -190,10 +191,13 @@ canvas.addEventListener('mouseout', () => {
     isDrawing = false;
 });
 
+// Touch Events
 canvas.addEventListener('touchstart', (e) => {
     const touch = getTouchPos(canvas, e);
     isDrawing = true;
     drawDot(touch.x, touch.y);
+    saveState();
+    disableUndoRedoButtons(false);
     e.preventDefault();
 }, { passive: false });
 
@@ -208,24 +212,6 @@ canvas.addEventListener('touchmove', (e) => {
 canvas.addEventListener('touchend', () => {
     isDrawing = false;
 });
-
-document.body.addEventListener('touchstart', (e) => {
-    if (e.target == canvas) {
-        e.preventDefault();
-    }
-}, { passive: false });
-
-document.body.addEventListener('touchend', (e) => {
-    if (e.target == canvas) {
-        e.preventDefault();
-    }
-}, { passive: false });
-
-document.body.addEventListener('touchmove', (e) => {
-    if (e.target == canvas) {
-        e.preventDefault();
-    }
-}, { passive: false });
 
 // Save canvas state
 function saveState() {
