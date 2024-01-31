@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>I279</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvasContainer">
+        <canvas id="drawingCanvas" width="800" height="800"></canvas>
+        <canvas id="previewCanvas" width="200" height="200"></canvas>
+        <div id="tools">
+            <!-- Mirror Count -->
+            <div class="tool">
+                <label for="mirrorCount">Mirror Count: <span id="mirrorCountDisplay">6</span></label>
+                <input type="range" id="mirrorCount" min="1" max="36" value="6">
+            </div>
+
+            <!-- Dot Size Dropdown -->
+            <div class="tool">
+                <label for="brushSize">Dot Size: <span id="brushSizeDisplay">5</span></label>
+                <select id="brushSize">
+                    <!-- Dot Size Options -->
+                </select>
+            </div>
+
+            <!-- Brush Size Slider -->
+            <div class="tool">
+                <label for="brushSizeSlider">Brush Size: <span id="brushSizeSliderDisplay">5</span></label>
+                <input type="range" id="brushSizeSlider" min="1" max="1131" value="5">
+            </div>
+
+            <!-- Brush Color Picker -->
+            <div class="tool">
+                <label for="brushColor">Brush Color:</label>
+                <input type="color" id="brushColor" value="#000000">
+            </div>
+
+            <!-- Mirror Center X Slider -->
+            <div class="tool">
+                <label for="centerX">Mirror Center X: <span id="centerXDisplay">400</span></label>
+                <input type="range" id="centerX" min="0" max="800" value="400">
+            </div>
+
+            <!-- Mirror Center Y Slider -->
+            <div class="tool">
+                <label for="centerY">Mirror Center Y: <span id="centerYDisplay">400</span></label>
+                <input type="range" id="centerY" min="0" max="800" value="400">
+            </div>
+
+            <!-- Brush Shape Selector -->
+            <div class="tool">
+                <label for="brushShape">Brush Shape:</label>
+                <select id="brushShape">
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                    <option value="oval">Oval</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+
+            <!-- Background Image Loader -->
+            <div class="tool">
+                <label for="backgroundLoader">Background Image:</label>
+                <input type="file" id="backgroundLoader" accept="image/*">
+            </div>
+
+            <!-- Image Pattern Loader -->
+            <div class="tool">
+                <label for="imageLoader">Image Pattern (optional):</label>
+                <input type="file" id="imageLoader" accept="image/*">
+            </div>
+
+            <!-- Undo and Redo Buttons -->
+            <div class="tool">
+                <button id="undoButton" disabled>Undo</button>
+                <button id="redoButton" disabled>Redo</button>
+            </div>
+
+            <!-- Save Drawing Button -->
+            <div class="tool">
+                <button id="saveButton">Save Drawing</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
